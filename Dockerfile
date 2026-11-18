@@ -22,6 +22,8 @@ RUN install-php-extensions \
     intl \
     opcache
 
+    RUN setcap -r /usr/local/bin/frankenphp
+
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
