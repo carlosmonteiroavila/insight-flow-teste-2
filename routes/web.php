@@ -7,6 +7,10 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StockMovementController;
 
+Route::get('/healthz', function () {
+    return response('OK', 200);
+});
+
 Route::get('/', function () {
     return auth()->check()
         ? redirect()->route('dashboard')
