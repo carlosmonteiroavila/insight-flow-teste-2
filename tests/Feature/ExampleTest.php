@@ -14,7 +14,7 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/');
 
-        $response->assertRedirect('/login');
+        $response->assertStatus(200);
     }
 
     public function test_the_login_page_loads(): void

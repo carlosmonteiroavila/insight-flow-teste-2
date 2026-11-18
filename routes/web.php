@@ -14,7 +14,7 @@ Route::get('/healthz', function () {
 Route::get('/', function () {
     return auth()->check()
         ? redirect()->route('dashboard')
-        : redirect()->route('login');
+        : view('auth.login');
 });
 
 Route::middleware('guest')->group(function () {

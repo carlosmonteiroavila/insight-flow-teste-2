@@ -29,6 +29,8 @@ class AppServiceProvider extends ServiceProvider
                 if (!file_exists($dbPath)) {
                     @touch($dbPath);
                 }
+                @chmod($dbPath, 0666);
+                @chmod($dir, 0777);
             }
         }
     }
